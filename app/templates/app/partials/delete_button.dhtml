@@ -1,0 +1,4 @@
+<form action=" {% url 'app:delete' todo.id %}" method="POST">
+    {% csrf_token %}
+    <button class="button red">Delete</button>
+</form>

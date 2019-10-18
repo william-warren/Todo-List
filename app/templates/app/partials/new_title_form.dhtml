@@ -1,0 +1,8 @@
+<form action="{% url 'app:create' %}" method="POST" id="create">
+    {% csrf_token %}
+    <label for="title">
+        Title:
+        <input type="text" name="title" id="title-input" placeholder="30 Characters Max (Not Really)">
+    </label>
+    <button class="button red">Don't Forget!</button>
+</form>

@@ -1,0 +1,70 @@
+body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    font-size: 16pt;
+    margin: 0;
+    min-height: 100vh;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#create {
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 1rem;
+    width: 60rem;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#title-input {
+    width: 45rem;
+    height: 1.5rem;
+    margin-left: 1.5rem;
+    border-radius: 5px;
+    font-size: 16pt;
+}
+
+#filter-container {
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    margin-top:1.5rem;
+    border-bottom: 1px solid lightgray;
+    width:60rem;
+    padding-bottom:1rem;
+}
+
+.todo-field {
+    display: flex;
+    justify-content: space-between;
+    width: 60rem;
+    align-items: center;
+    border-top: 1px solid lightgray;
+}
+
+.complete-container {
+    display: flex;
+    align-items: center;
+}
+
+.button {
+    color: white;
+    border-radius: 5px;
+    padding:.5rem;
+    font-size: 16pt;
+}
+
+.red {    
+    background-color: red;
+}
+
+.blue {    
+    background-color: blue;
+}
+
+.green {
+    background-color: green;
+}

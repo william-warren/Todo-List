@@ -1,0 +1,117 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pls No 4Ghetti</title>
+    <link rel="stylesheet" href="{% static 'app/style.css' %}">
+    <script src="https://kit.fontawesome.com/b210ac98a6.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    
+    {% include 'app/partials/new_title_form.dhtml' %}
+    {% include 'app/partials/filters.dhtml' %} 
+    {% if todos %}
+    <ul style="padding: 0rem;">
+        
+        {% for todo in todos %}
+        {% include 'app/partials/li_item.dhtml' %}
+        {% endfor %}
+    
+    </ul>
+    {% else %}
+    {% include 'app/partials/empty_todos.dhtml' %}
+    {% endif %}
+
+</body>
+
+</html>
+
+
+
+
+{% comment %} <style>
+    .button {
+        padding: .5rem;
+        border-radius: 5px;
+        color: white;
+    }
+
+    .red {
+        background-color: red;
+    }
+
+    .blue {
+        background-color: blue;
+    }
+
+    .green {
+        background-color: green;
+    }
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body style="display:flex;flex-direction:column;justify-content:center;align-items:center;height:100vh;">
+    
+    <form action="{% url 'app:create' %}" method="POST" style="border-bottom:1px solid black;padding-bottom:1rem;">
+        {% csrf_token %}
+        <label for="title" style="display:flex;width:30rem;justify-content:space-between;align-items:baseline;">
+            Title: 
+            <input type="text" name="title" style="width:20rem;height:1.5rem;">
+            <button class="button red">Don't Forget</button>
+        </label>
+    </form>
+
+    <div style="display:flex;width:30rem;justify-content:center;border-bottom:1px solid black;padding-bottom:1rem;margin:0;">
+        <button class="button blue" style="margin: 0rem 1rem;"><a href="{% url 'app:todos' %}?filter=ALL" style="text-decoration:none;color:white;">All</a</button>
+        <button class="button blue" style="margin: 0rem 1rem;"><a href="{% url 'app:todos' %}?filter=ACTIVE" style="text-decoration:none;color:white;">Active</a></button>
+        <button class="button blue" style="margin: 0rem 1rem;"><a href="{% url 'app:todos' %}?filter=COMPLETED" style="color:white;text-decoration:none;">Completed</a></button>
+    </div>
+
+    <ul style="margin:0;padding:0;">
+        {% for todo in todos %}
+        <li style="display:flex;align-items:baseline;justify-content:space-between;width:30rem;border-top:1px solid black;margin-top:.5rem;">
+            <form action=" {% url 'app:toggle_editing' todo.id %}" method="POST">
+                {% csrf_token %}
+                <button class="button blue">Edit</button>
+            </form>
+
+            {% if todo.editing %}
+            <form action="{% url 'app:new-title' todo.id %}" method="POST" style="display:flex;align-items:baseline;">
+                {% csrf_token %}
+                <input type="text" name="title" style="width:12.5rem;margin-right:1rem;">
+                <button class="button blue" style="margin-right:.5rem;">↧</button>
+            </form>
+            {% else %}
+            <p style="margin:0;width:15rem;">
+                {{todo.title}}
+            </p>
+            {% endif %}
+            {% if todo.completed %}
+            <p>✅</p>
+            {% else %}
+            <p>❌</p>
+            {% endif %}
+            <form action="{% url 'app:toggle_completed' todo.id %}" method=POST>
+                {% csrf_token %}
+                <button class="button green">Toggle Completion</button>
+            </form>
+            <form action="{% url 'app:delete' todo.id %}" method="POST">
+                {% csrf_token %}
+                <button class="button red">Delete</button>
+            </form>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html> {% endcomment %}

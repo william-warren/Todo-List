@@ -1,0 +1,14 @@
+<body style="display: flex; align-items: center; flex-direction: column; width: 100vw;">
+    
+    {% include 'app/partials/new_title_form.html' %}
+    {% include 'app/partials/filters.html' %} 
+
+    <ul style="padding: 0rem;">
+        
+        {% for todo in todos %}
+        {% include 'app/partials/li_item.html' %}
+        {% endfor %}
+    
+    </ul>
+
+</body>

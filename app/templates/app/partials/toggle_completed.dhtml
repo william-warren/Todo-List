@@ -1,0 +1,14 @@
+<form action="{% url 'app:toggle_completed' todo.id %}" method="POST" class='complete-container'>
+    {% csrf_token %}
+    {% if todo.completed %}
+    <i class="fas fa-check"></i>
+    <button style="margin-left:.5rem;" class="button green">
+        Toggle Complete
+    </button>
+    {% else %}
+    <i class="fas fa-times"></i>
+    <button style="margin-left:.5rem;" class="button green">Toggle
+        Complete
+    </button>
+    {% endif %}
+</form>

@@ -1,0 +1,8 @@
+<div id="filter-container">
+    <a href="{% url 'app:todos' %}?filter=ALL"><button
+            class="button blue">All</button></a>
+    <a href="{% url 'app:todos' %}?filter=COMPLETED"><button
+            class="button blue">Completed</button></a>
+    <a href="{% url 'app:todos' %}?filter=ACTIVE"><button
+            class="button blue">Active</button></a>
+</div>

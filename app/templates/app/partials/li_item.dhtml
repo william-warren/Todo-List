@@ -1,0 +1,5 @@
+<li class="todo-field">    
+    {% include 'app/partials/toggle_editing.dhtml' %}
+    {% include 'app/partials/toggle_completed.dhtml' %}
+    {% include 'app/partials/delete_button.dhtml' %}
+</li>

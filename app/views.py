@@ -12,7 +12,7 @@ def todos(request: HttpRequest) -> HttpResponse:
         todos = Todo.objects.filter(completed=True)
     else:
         todos = Todo.objects.all()
-    return render(request, 'app/todos.html', {'todos': todos})
+    return render(request, 'app/todos.dhtml', {'todos': todos})
 
 
 def create_todo(request: HttpRequest) -> HttpResponse:
