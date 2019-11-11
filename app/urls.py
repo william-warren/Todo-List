@@ -14,4 +14,6 @@ urlpatterns = [
     ),
     path("todo/<int:id>/new-title", views.new_title, name="new-title"),
     path("todo/<int:id>/delete/", views.delete_todo, name="delete"),
+    path("will/", views.will_view),
+    path("add/", views.add_numbers),
 ]
